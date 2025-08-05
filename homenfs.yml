@@ -1,0 +1,41 @@
+---
+- name: Mount NFS share temporarily if not already mounted
+  hosts: all
+  become: yes
+  vars:
+    nfs_server: 172.25.250.10:/shared  # Replace with your NFS server
+      #    nfs_share: /path/to/share       # Replace with your NFS share path
+    mount_point: /mnt/nas_share/
+    home_dir: a1639952-a
+    owner_dir: root
+    group_dir: root
+  tasks:
+   - name: Check if NFS share is already mounted
+     ansible.builtin.command: findmnt -n {{ mount_point }}
+     register: mount_check
+     ignore_errors: yes
+     changed_when: false
+
+   - name: Mount NFS share
+     ansible.builtin.command: >
+       mount -t nfs {{ nfs_server }} {{ mount_point }}
+     when: mount_check.rc != 0
+     register: mount_result
+
+   - name: Show mount result
+     ansible.builtin.debug:
+       msg: "NFS share was mounted successfully"
+     when: mount_check.rc != 0 and mount_result.rc == 0
+
+   - name: Show already mounted message
+     ansible.builtin.debug:
+       msg: "NFS share is already mounted on {{ mount_point }}"
+     when: mount_check.rc == 0
+
+   - name: Create home directory
+     ansible.builtin.file:
+       path: "{{ mount_point }}/{{ home_dir}}"
+       state: directory
+       owner: "{{ owner_dir }}"
+       group: "{{ group_dir }}"
+       mode: '0755'
