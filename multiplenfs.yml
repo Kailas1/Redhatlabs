@@ -9,8 +9,9 @@
     home_dir: A558832-a
       # Add more shares as needed
   tasks:
-    - name: Process NFS shares
+    - name: Creation of the home dir
       ansible.builtin.include_tasks: multi_nfs_tasks.yml
+      ansible.builtin.include_tasks: user_tasks.yml
       loop: "{{ nfs_shares }}"
       loop_control:
         loop_var: item
