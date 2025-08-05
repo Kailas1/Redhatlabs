@@ -6,9 +6,6 @@
     nfs_shares:
       - { server: "172.25.250.10:/shared", mount_point: "/mnt/nas_share1/" }
       - { server: "172.25.250.11:/nas_shared_B", mount_point: "/mnt/nas_share2/" }
-#       - server: "172.25.250.10:/shared"
-#       - server: "172.25.250.11:/nas_shared_B"
-#    mount_point: "/mnt/"
     home_dir: A558832-a
       # Add more shares as needed
   tasks:
@@ -17,11 +14,3 @@
       loop: "{{ nfs_shares }}"
       loop_control:
         loop_var: item
-
-  #  - name: Create the home dir
-  #    ansible.builtin.file:
-  #      path: "{{ item.mount_point }}/{{ user_dir }}"
-  #      state: directory
-  #      mode: '0755'
-  #    loop: "{{ mount_check.results }}"
-       
