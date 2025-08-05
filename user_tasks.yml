@@ -7,7 +7,9 @@
     
 - name: Show mount results
   ansible.builtin.debug:
-    msg: "Home directory created {{ item.mount_point }}/{{ home_dir }}"
+    msg: "Home directory created {{ item.mount_point }}/{{ home_dir }}"sh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDzbr9rIkVLpayapg0ktiQ7WtGfwCEJ8tu67pUOez1Do4leg+OiS05cD+P/YT0whsBxiwnfbycVyTSU4GLrI7HWbqWBurpqaNsW6pk4g9U0bC9DGMIcwp/uC+EfiS7PXoFD6fC4mkTXiLNXyVdsnP5Zo4/df/+sIYxblCZV+A/3ruuw5neWsKisXMHJ02BWophDBR6a4e74cRTPbDRjGzDFU2iXjT84SpI8OY9IxPrbG/mNUsoN/nawlCO7pcjhAeVRvtJQ+tIbYLl79r1EazwwuSMF13bOF/+G3LOjFvKhCcFnc/Z+UJoKETlDuIy+nm+5lBof1yEk+NwDrATNpa10yG1i891p2emAu9Wgb6+qz6EhRf5O/bAKTAaPeKweF+7fO3r7bOKYy7IxUCVn+WzJzj9Ml9TntSOrtlP43JWbNkOXDBfyjdPdDBcHwQbobJadMFK+nZ0cXb2gh5j9+B74oz3iDoW9GGFG6C/5484W35P2gcoYDUB+I0+J+5hUrfJeuFMrrqsy5AE+tDqygVe07Q4lu6QukIHYmd2sYIvC1DHZyi0vXDb/Rp0z/raSfgOPlfY1Tw+Wow/qfnqA/SorkrEz4fwzpQtnf05ctKI8DWbIBOO1eOwY8O1K3wsY2G26jgaep8+o6voN7IoAAhVHJo82EbDUl/+nc7McShTXVQ== kailumalshete@gmail.com
+
+
 
 
 
