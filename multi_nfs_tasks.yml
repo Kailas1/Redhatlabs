@@ -21,12 +21,6 @@
     msg: "NFS share {{ item.server }} is already mounted on {{ item.mount_point }}"
   when: mount_check.rc == 0
 
-- name: Create the home dir
-  ansible.builtin.file:
-    path: "{{ item.mount_point }}/{{ home_dir }}"
-    state: directory
-    mode: '0755'
-    
-- name: Show mount results
-  ansible.builtin.debug:
-    msg: "Home directory created {{ item.mount_point }}/{{ home_dir }}"
+- name: Add the user creation task
+  ansible.builtin.include_tasks: user_tasks.yml
+

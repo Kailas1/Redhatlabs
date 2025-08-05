@@ -5,12 +5,6 @@
     state: directory
     mode: '0755'
     
-- name: Show mount results
+- name: Show directory results
   ansible.builtin.debug:
-    msg: "Home directory created {{ item.mount_point }}/{{ home_dir }}"sh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDzbr9rIkVLpayapg0ktiQ7WtGfwCEJ8tu67pUOez1Do4leg+OiS05cD+P/YT0whsBxiwnfbycVyTSU4GLrI7HWbqWBurpqaNsW6pk4g9U0bC9DGMIcwp/uC+EfiS7PXoFD6fC4mkTXiLNXyVdsnP5Zo4/df/+sIYxblCZV+A/3ruuw5neWsKisXMHJ02BWophDBR6a4e74cRTPbDRjGzDFU2iXjT84SpI8OY9IxPrbG/mNUsoN/nawlCO7pcjhAeVRvtJQ+tIbYLl79r1EazwwuSMF13bOF/+G3LOjFvKhCcFnc/Z+UJoKETlDuIy+nm+5lBof1yEk+NwDrATNpa10yG1i891p2emAu9Wgb6+qz6EhRf5O/bAKTAaPeKweF+7fO3r7bOKYy7IxUCVn+WzJzj9Ml9TntSOrtlP43JWbNkOXDBfyjdPdDBcHwQbobJadMFK+nZ0cXb2gh5j9+B74oz3iDoW9GGFG6C/5484W35P2gcoYDUB+I0+J+5hUrfJeuFMrrqsy5AE+tDqygVe07Q4lu6QukIHYmd2sYIvC1DHZyi0vXDb/Rp0z/raSfgOPlfY1Tw+Wow/qfnqA/SorkrEz4fwzpQtnf05ctKI8DWbIBOO1eOwY8O1K3wsY2G26jgaep8+o6voN7IoAAhVHJo82EbDUl/+nc7McShTXVQ== kailumalshete@gmail.com
-
-
-
-
-
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC5WX0tlEa26ISUK2XaOHej5VCCLzV98MIvF0yANnAzn1uDktDEfvNRcGm52kEM1dl0OJ4yeGePQcT7mYnS45LKRINz1SGCYgzqJ81OfzLmNBC2wy9Sn9kOsGzBd+NTdlWPv73PK9fcEOnER7Ghs08Ttk98HcTOMLfi3svYVKTJTDgrCY/D+JQ4Jr+RyECexSS4cQgHB6sEEhpnBG1ajYFsk38yFnl1zEyj0dVEyxk2uFm5CB6sXo+w38B2TixlyHl5D78I6RtULLgpRGBEoxkOvQp5ZkvjbWmkqD+nr1v0/DfviLd3RZnwYTe4dtXcsQfS6XR8ImkyMLXZqyW01FCWABlZbraORnTrRH+r9kOFgcNtgCi527bkdWjsxd89HDv3evi9zAdU5Hv9Un0FR5aYS2SVB1uKJTP58fRMStyeMEoPMWrzRmaJj2ZdPSi5319dZEFk1ggvJVMfkny4gqiJHOEh5YEmgUah5uNhUDSn+JA5wAUBkDLOqCYaEnve4Auu4N7SfkPTKp3BAzxgc0D+y/hOrIj3OgG7xKB1U9iAtyE3uLa9EN3I1RD0EOr85aKY+0iHAtCAZ4ntd8XcOpwVRRe/vnPBeY/VAst5WWFPxO97PXLugEnhh12eeuLKlYgpJd3AC9FAZPORiHPMxVQW48zeb/Z7hF+fPYjYVmsKdw== kailumalshete@gmail.com
+    msg: "Home directory created {{ item.mount_point }}/{{ home_dir }}"
