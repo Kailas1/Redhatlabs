@@ -26,8 +26,7 @@
     path: "{{ item.mount_point }}/{{ home_dir }}"
     state: directory
     mode: '0755'
- #     loop: "{{ mount_check.results }}"
-
+    
 - name: Show mount results
   ansible.builtin.debug:
     msg: "Home directory created {{ item.mount_point }}/{{ home_dir }}"
