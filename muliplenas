@@ -35,3 +35,8 @@
   ansible.builtin.debug:
     msg: "NFS share {{ item.server }} is already mounted on {{ item.mount_point }}"
   when: mount_check.rc == 0
+
+- name: Show mount results
+  ansible.builtin.debug:
+    msg: 
+    	Home directory created: {{ item.item.mount_point }}/{{ item.item.home_dir }}
