@@ -30,19 +30,16 @@
           ansible.builtin.debug:
             msg: "NFS share {{ item.server }} is already mounted on {{ item.mount_point }}"
           when: mount_check.rc == 0
-      loop: "{{ nfs_shares }}"
+      loop: "{{ nfs_shares }}"hosts: all
+  become: yes
+  vars:
+    nfs_shares:
+      - { server: "172.25.250.10:/shared", mount_point: "/mnt/nas_share1/" }
+      - { server: "172.25.250.11:/nas_shared_B", mount_point: "/mnt/nas_share2/" }
+      # Add more shares as needed
+
       loop_control:
         loop_var: item
 
 
-ERROR! 'loop' is not a valid attribute for a Block
-
-The error appears to be in '/home/student/homedir/multiplenfs.yml': line 11, column 7, but may
-be elsewhere in the file depending on the exact syntax problem.
-
-The offending line appears to be:
-
-  tasks:
-    - name: Mount NFS shares
-      ^ here
 
