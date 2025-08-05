@@ -33,3 +33,16 @@
       loop: "{{ nfs_shares }}"
       loop_control:
         loop_var: item
+
+
+ERROR! 'loop' is not a valid attribute for a Block
+
+The error appears to be in '/home/student/homedir/multiplenfs.yml': line 11, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+    - name: Mount NFS shares
+      ^ here
+
